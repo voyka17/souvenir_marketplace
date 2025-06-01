@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import CartProduct from "../components/card/CartProduct";
@@ -57,3 +58,4 @@ function FeaturedProduct() {
 }
 
 export default FeaturedProduct;
+
