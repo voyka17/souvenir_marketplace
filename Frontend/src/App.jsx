@@ -1,19 +1,25 @@
-import React from "react"
-import Home from "./pages/Home.jsx"
-import Sidebar from "./components/layout/Sidebar.jsx"
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import OfertProduct from "./pages/OfferProduct.jsx";
+import AllProducts from "./pages/SalesProducts.jsx"; 
+import FeaturedProduct from "./pages/FeaturedProducts.jsx";
+import CartPage from "./pages/CartSale.jsx";
 
 
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* <Home />*/}
-      <Sidebar />
-    </div >
 
+      <Routes>
+        <Route path="/product" element={<AllProducts />} />
+        <Route path="/offert" element={<OfertProduct />} />
+        <Route path="/featured" element={<FeaturedProduct />} />
+        <Route path="/cart" element={<CartPage />} />
 
-  )
+      </Routes>
+    
+  );
 }
 
-export default App
-
+export default App;

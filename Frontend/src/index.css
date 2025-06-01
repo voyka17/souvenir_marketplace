@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @layer base {
     :root {
         --createdGreen: #2a593b;
@@ -19,3 +20,4 @@ body,
     padding: 0;
     height: 100%;
 }
+
