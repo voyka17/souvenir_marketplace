@@ -6,8 +6,9 @@ import AllProducts from "./pages/SalesProducts.jsx";
 import FeaturedProduct from "./pages/FeaturedProducts.jsx";
 import CartPage from "./pages/CartSale.jsx";
 import Profile from "./pages/profile.jsx";
-
-
+import LoginPage from './pages/login.jsx';
+import NotFound from './pages/NotFound.jsx'
+import Register from './pages/register.jsx';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
       <Route path="/featured" element={<FeaturedProduct />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/profile" element={<Profile />} />
-
+      <Route path='/login' element={<LoginPage />  } />
+      <Route path='/register' element={<Register />  } />
+      <Route path="*" element={<NotFound />} />
     </Routes>
 
   );
