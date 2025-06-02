@@ -6,6 +6,7 @@ import AllProducts from "./pages/SalesProducts.jsx";
 import FeaturedProduct from "./pages/FeaturedProducts.jsx";
 import CartPage from "./pages/CartSale.jsx";
 import Profile from "./pages/profile.jsx";
+import Home from "./pages/Home.jsx";
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/featured" element={<FeaturedProduct />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/home" element={<Home />} />
 
     </Routes>
 

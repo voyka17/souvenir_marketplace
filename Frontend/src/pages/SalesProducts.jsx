@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import CartProduct from "../components/card/CartProduct";
 import { CartContext } from "../context/cartContext.jsx";
 import  Sidebar  from "../components/layout/Sidebar.jsx";
+import  Footer  from "../components/layout/Footer.jsx";
 
 function SalesProducts() {
   const [products, setProducts] = useState([]);
@@ -34,7 +35,8 @@ function SalesProducts() {
           </nav>
         </aside> */}
 
-        <main className="flex-1 bg-[#f2ddb6] p-6">
+        <main className="flex-1 bg-[#f2ddb6] lg:ml-[220px] p-4 md:p-6">
+          <h1 className="text-3xl font-bold mb-4 text-center">Todos los Productos</h1>
           <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {products.map((product) => (
@@ -51,7 +53,7 @@ function SalesProducts() {
           </div>
         </main>
       </div>
-
+            <Footer></Footer>
 
     </div>
   );
