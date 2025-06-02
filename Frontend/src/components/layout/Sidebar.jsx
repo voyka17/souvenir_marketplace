@@ -23,25 +23,25 @@ const Sidebar = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)] ">
+                            <a href="/offert" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)] ">
                                 <MdOutlineLocalOffer />
                                 <span className="flex-1 ms-3 whitespace-nowrap"> Offers</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <a href="/featured" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <AiOutlineLike />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Featured Products</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <a href="/product" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <AiOutlineProduct />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Products</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <a href="/cart" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <BsCartCheck />
                                 <span className="flex-1 ms-3 whitespace-nowrap">E-commerce</span>
                             </a>
