@@ -6,11 +6,10 @@ import { TfiWallet } from "react-icons/tfi";
 
 const Footer = () => {
     return (
-        <footer className="bg-[var(--createdBrown)] font-serif text-white text-sm py-6 px-2 md:px-8 ">
+        <footer className="bg-[var(--createdBrown)] font-serif text-white text-sm py-2 px-2 md:px-8 lg:ml-[220px]">
             <div className="max-w-7xl mx-auto flex flex-col  gap-">
-
                 {/* Sección de íconos */}
-                <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
+                <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
                     <div className="flex flex-col items-center space-y-2">
                         <IoMdKey className="text-2xl" />
                         <h3 className="font-serif ">Compra segura</h3>
