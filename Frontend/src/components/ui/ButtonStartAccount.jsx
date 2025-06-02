@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ButtonStartAccount = () => {
     return (
-        <button className="
+
+        <Link to="/register">
+            <button className="
+        
             bg-[var(--createdBrown)] hover:bg-[var(--createdlightYellow)] active:bg-[var(--createdOrange)] 
             px-3 py-1 text-xs   /* Móviles: padding y fuente pequeñas */
             sm:px-4 sm:py-2 sm:text-sm   /* Tablets: un poco más grandes */
@@ -14,8 +18,9 @@ const ButtonStartAccount = () => {
             text-white 
             transition-all duration-300 ease-in-out 
         ">
-            Ingresar
-        </button>
+                Ingresar
+            </button>
+        </Link>
     )
 }
 
