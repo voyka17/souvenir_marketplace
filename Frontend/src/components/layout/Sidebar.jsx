@@ -15,10 +15,10 @@ const Sidebar = () => {
     return (
         <>
             <aside id="default-sidebar" className="hidden lg:fixed lg:top-0 lg:left-0 lg:z-40 lg:w-55 lg:h-screen lg:transition-transform lg:block" aria-label="Sidebar">
-                <div className="h-full px-4 py-4 overflow-y-auto bg-[var(--createdMustard)]">
-                    <ul className="space-y-3 font-medium">
+                <div className="h-full px-2 py-3 overflow-hidden bg-[var(--createdMustard)]">
+                    <ul className="space-y-1 font-medium">
                         <li>
-                            <a href="#" className="flex items-center p-2  rounded-lg  ">
+                            <a href="#" className="flex items-center p-1  rounded-lg  ">
                                 <img src="/src/assets/images/logo.png" alt="Logo" className="w-45 rounded-sm" />
                             </a>
                         </li>
