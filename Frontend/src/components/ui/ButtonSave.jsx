@@ -13,7 +13,7 @@ const ButtonSave = () => {
             text-white 
             transition-all duration-300 ease-in-out 
         ">
-            Save Profile
+            Send
         </button>
     )
 }

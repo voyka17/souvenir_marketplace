@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from '../components/layout/Sidebar.jsx'
 import Footer from '../components/layout/Footer.jsx'
+import ButtonSave from '../components/ui/ButtonSave.jsx'
 
 const Sell = () => {
     return (
@@ -70,11 +71,18 @@ const Sell = () => {
                                             <p className="text-xs text-gray-600">PNG, JPG, GIF up to 10MB</p>
                                         </div>
                                     </div>
+
+
+                                    <div className="rounded-md w-full mt-1 px-3 justify  py-2  bg-[var(--createdlightYellow)]">
+                                        <ButtonSave />
+                                    </div>
+
                                 </div>
 
                             </div>
                         </div>
                     </div>
+
                 </form>
                 <Footer />
             </div>
