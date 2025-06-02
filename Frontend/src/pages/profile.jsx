@@ -8,7 +8,7 @@ const Profile = () => {
         <div className="flex flex-col min-h-screen">
             <Sidebar />
 
-            <main className="flex-1 bg-[#f9e5bb] ml-55">
+            <main className="flex-1 bg-[#f9e5bb] ml-0 lg:ml-[220px] transition-all duration-300">
                 <div className="max-w-4xl mx-auto bg-[var(--createdlightYellow)] rounded-lg shadow-lg p-6 flex gap-6">
 
                     {/* Sección de avatar y nombre */}

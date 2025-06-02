@@ -1,15 +1,17 @@
 import React from 'react'
-import FeaturedProducts from './FeaturedProducts.jsx'
 import Header from '../components/layout/Header.jsx'
 import Footer from '../components/layout/Footer.jsx'
+import Galery from '../components/layout/Galery.jsx';
+
 
 
 const Home = () => {
     return (
         <>
             <Header />
-
-            <FeaturedProducts />
+            
+            
+            <Galery />
 
             <Footer />
         </>
