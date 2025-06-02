@@ -53,8 +53,6 @@ const Sell = () => {
                                         />
                                     </div>
                                 </div>
-
-
                                 <div>
                                     <label htmlFor="cover-photo" className="block text-sm font-medium text-gray-900">Product photo</label>
                                     <div className="mt-4 flex justify-center items-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 bg-[#fff8e7]">
