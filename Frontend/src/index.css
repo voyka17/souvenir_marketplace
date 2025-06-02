@@ -10,6 +10,7 @@
         --createdBrownB: #260101;
         --createdRed: #BF2315;
         --createdOrange: #BF6211;
+        --createdligthYellosW: #fff8e7;
     }
 }
 
@@ -20,4 +21,3 @@ body,
     padding: 0;
     height: 100%;
 }
-
