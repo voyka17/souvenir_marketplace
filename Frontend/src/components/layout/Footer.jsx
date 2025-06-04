@@ -4,9 +4,9 @@ import { MdOutlineAssignmentReturn } from "react-icons/md";
 import { FaShippingFast } from "react-icons/fa";
 import { TfiWallet } from "react-icons/tfi";
 
-const Footer = () => {
+const Footer = ({ withSidebar = false }) => {
     return (
-        <footer className="bg-[var(--createdBrown)] font-serif text-white text-sm py-2 px-2 md:px-8 lg:ml-[220px]">
+        <footer className="bg-[var(--createdBrown)] font-serif text-white text-sm py-2 px-2 md:px-8  ${withSidebar ? 'lg:ml-[220px]' :">
             <div className="max-w-7xl mx-auto flex flex-col  gap-">
                 {/* Sección de íconos */}
                 <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">

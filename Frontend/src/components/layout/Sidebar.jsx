@@ -24,7 +24,7 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to ="/offert" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)] ">
+                            <Link to="/offert" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)] ">
                                 <MdOutlineLocalOffer />
                                 <span className="flex-1 ms-3 whitespace-nowrap"> Offers</span>
                             </Link>
@@ -36,7 +36,7 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to ="/product" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <Link to="/product" className="flex items-center p-2 rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <AiOutlineProduct />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Products</span>
                             </Link>
@@ -48,19 +48,19 @@ const Sidebar = () => {
                             </Link >
                         </li>
                         <li>
-                            <Link to ="/profile" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <Link to="/profile" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <CgProfile />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Profile</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <Link to="/sell" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <LiaMoneyBillWaveSolid />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Sell</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
+                            <Link to="/home" className="flex items-center p-2  rounded-lg dark:text-black hover:bg-[var(--createdlightYellow)]  ">
                                 <PiSignOut />
                                 <span className="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
                             </Link>

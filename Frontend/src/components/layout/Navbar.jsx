@@ -15,8 +15,8 @@ const Navbar = () => {
     { name: 'Products', to: '/product' },
     { name: 'E-commerce', to: '/cart' },
     { name: 'Profile', to: '/profile' },
-    { name: 'Sell', to: '' },
-    { name: 'Sign Up', to: ''}
+    { name: 'Sell', to: '/sell' },
+    { name: 'Sign Up', to: '' }
   ];
 
   return (
