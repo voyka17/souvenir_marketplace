@@ -41,6 +41,7 @@ function FeaturedProduct() {
                 id={product.id_product}
                 name={product.name}
                 price={product.price}
+                stock={product.stock}
                 description={product.description}
                 image={`http://localhost:4001${product.image_url}`}
                 onAddToCart={() => alert(`${product.name} agregado al carrito`)}
