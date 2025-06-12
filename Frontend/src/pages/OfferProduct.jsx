@@ -10,14 +10,12 @@ function OfferProduct() {
   const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
-    fetch("http://localhost:3001/products")
+    fetch("http://localhost:4001/product/offert")
       .then((res) => res.json())
-      .then((data) => {
-        const ofertas = data.filter((product) => product.onSale === true);
-        setProducts(ofertas);
-      })
+      .then((data) => {setProducts(data);})
       .catch((err) => console.error("Error al cargar productos:", err));
   }, []);
+  console.log("Productos para mostrar:", products);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -41,11 +39,12 @@ function OfferProduct() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {products.map((product) => (
               <CartProduct
-                key={product.id}
-                id={product.id}
+                key={product.id_product}
+                id={product.id_product}
                 name={product.name}
                 price={product.price}
-                image={product.image}
+                description={product.description}
+                image={`http://localhost:4001${product.image_url}`}
                 onAddToCart={() => addToCart(product)}
               />
             ))}

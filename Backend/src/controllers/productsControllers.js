@@ -38,8 +38,16 @@ const getFeatured = async (req,res) =>{
 
 // crea un nuevo producto
 const newProduct = async (req,res) => {
+    console.log("Llega una petición POST /product");
+  console.log("req.body:", req.body);
+  console.log("req.file:", req.file);
     try {
-        const {name,description,price,stock,image_url} = req.body;
+        const {name,description,price,stock,} = req.body;
+        let image_url = null;
+        if (req.file) {
+        image_url = `/uploads/${req.file.filename}`;
+        }
+
         const result =await createNewproduct (name,description,price,stock,image_url);
 
          if (result)

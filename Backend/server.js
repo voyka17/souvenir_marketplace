@@ -1,24 +1,22 @@
 import express from "express";
-
 import cors from 'cors';
-import { pool } from "./src/config/db.js";
 import dotenv from "dotenv";
 import productsRoutes from './src/routes/productsRoutes.js'
+import path from 'path';
 
 
 dotenv.config();
 const app = express();
 
+
 app.use(cors());
 app.use(express.json());
-app.use("/product", productRoutes);
+
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+app.use('/product', productsRoutes);
+
+
 
 app.listen(process.env.PORT, () => {
   console.log(`Servidor corriendo en el puerto ${process.env.PORT}`);
 });
-
-app.use(cors());
-app.use(express.json());
-
-
-app.use('/',productsRoutes)

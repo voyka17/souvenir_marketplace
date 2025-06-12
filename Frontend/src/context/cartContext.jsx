@@ -6,7 +6,7 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  // Aquí va la función addToCart que me preguntas:
+  
   function addToCart(product) {
     setCartItems(prevItems => {
       const existing = prevItems.find(item => item.id === product.id);

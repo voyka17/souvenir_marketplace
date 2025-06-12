@@ -9,13 +9,9 @@ function FeaturedProduct() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/products")
+    fetch("http://localhost:4001/product/featured")
       .then((res) => res.json())
-      .then((data) => {
-        // Filtra los productos que están destacados (featured)
-        const destacados = data.filter((product) => product.featured === true);
-        setProducts(destacados);
-      })
+      .then((data) => {setProducts(data);})
       .catch((err) => console.error("Error al cargar productos:", err));
   }, []);
 
@@ -41,11 +37,12 @@ function FeaturedProduct() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {products.map((product) => (
               <CartProduct
-                key={product.id}
-                id={product.id}
+                key={product.id_product}
+                id={product.id_product}
                 name={product.name}
                 price={product.price}
-                image={product.image}
+                description={product.description}
+                image={`http://localhost:4001${product.image_url}`}
                 onAddToCart={() => alert(`${product.name} agregado al carrito`)}
               />
             ))}

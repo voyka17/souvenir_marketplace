@@ -6,7 +6,7 @@ const Galery = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3001/products")
+    fetch("http://localhost:4001/product")
       .then((res) => {
         if (!res.ok) throw new Error("Error en la respuesta del servidor");
         return res.json();
