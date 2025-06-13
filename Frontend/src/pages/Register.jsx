@@ -11,7 +11,7 @@ import Footer from '../components/layout/Footer.jsx';
 import countriesData from '../data/countries.json';
 import Sidebar from '../components/layout/Sidebar.jsx';
 
-const URL_SERVER = 'http://localhost:3000/register';
+const URL_SERVER = 'http://localhost:3001/register';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
