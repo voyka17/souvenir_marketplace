@@ -5,12 +5,12 @@ import loginImage from '../assets/images/main.jpg';
 import Footer from '../components/layout/Footer.jsx';
 import { UserContext } from '../context/userContext.jsx'; 
 
-const URL_SERVER = 'http://localhost:3001/login';
+const URL_SERVER = 'http://localhost:4001/login';
 
 const LoginPage = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
-  const { login } = useContext(UserContext); // Usa el contexto para obtener la función login
+  const { login } = useContext(UserContext); 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
