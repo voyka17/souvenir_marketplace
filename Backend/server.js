@@ -10,10 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/product", productsRoutes);
-
-app.use(cors());
-app.use(express.json());
-
 app.use('/',productsRoutes);
 app.use('/', userRoutes); 
 
