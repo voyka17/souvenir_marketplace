@@ -7,9 +7,9 @@ import FeaturedProduct from "./pages/FeaturedProducts.jsx";
 import CartPage from "./pages/CartSale.jsx";
 import Profile from "./pages/profile.jsx";
 import Home from "./pages/Home.jsx";
-import LoginPage from './pages/login.jsx';
+import LoginPage from './pages/Login.jsx';
 import NotFound from './pages/NotFound.jsx'
-import Register from './pages/register.jsx';
+import Register from './pages/Register.jsx';
 import Sell from "./pages/Sell.jsx";
 
 
