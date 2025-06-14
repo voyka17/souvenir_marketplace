@@ -11,7 +11,7 @@ import Footer from '../components/layout/Footer.jsx';
 import countriesData from '../data/countries.json';
 import Sidebar from '../components/layout/Sidebar.jsx';
 
-const URL_SERVER = 'http://localhost:3001/register';
+const URL_SERVER = 'http://localhost:4001/register';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -96,7 +96,7 @@ const RegisterPage = () => {
                 <FaUser className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500" />
               </div>
             </div>
-
+          {/* Campo: Apellidos */}     
             <div className="mb-6">
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Apellidos
