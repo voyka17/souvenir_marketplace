@@ -98,7 +98,7 @@ const RegisterPage = () => {
             </div>
           {/* Campo: Apellidos */}     
             <div className="mb-6">
-              <label htmlFor="name" className="block text-sm font-medium mb-1">
+              <label htmlFor="last_name" className="block text-sm font-medium mb-1">
                 Apellidos
               </label>
               <div className="relative">
