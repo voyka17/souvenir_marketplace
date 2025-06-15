@@ -17,7 +17,7 @@ router.get("/offert", getOffert);
 router.get("/featured", getFeatured);
 router.post("/", upload.single("image"), newProduct);
 router.delete("/:id", deleteProduct);
-
+//rutas para la vista de administrador
 router.get("/:id", getProductById);
 router.put("/:id", upload.single("image"), updateProduct);
 
