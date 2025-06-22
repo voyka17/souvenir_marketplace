@@ -115,6 +115,11 @@ const updateProfile_User = async (req, res) => {
     if (req.file) {
       image_url = `/uploads/profile/${req.file.filename}`;
     }
+    /* const token = Jwt.sign({ 
+    id: req.user.id_users,
+    email: req.user.email,
+    role_id: req.user.role_id }, process.env.JWT_PASSWORD); */
+
      const result = await consultasUsers.updateProfileUser (profileusers_id, phone, country, address, image_url, passwordEncrypted);
     if (!result) {
       throw { code: 400, message: 'Actualización del usuario fallida.' };
