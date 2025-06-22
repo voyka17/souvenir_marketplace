@@ -14,7 +14,7 @@ const URL_SERVER = 'http://localhost:4001/login';
 
 const LoginPage = () => {
   const [form, setForm] = useState({ email: '', password: '' });
-  const { user, login, logout } = useContext(UserContext);
+  const { user, login } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,7 +49,21 @@ const LoginPage = () => {
       console.error('Login error:', error.response?.data?.message || error.message);
       toast.error(error.response?.data?.message || 'Correo o contraseña incorrectos');
     }
-  };
+
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.usuario));
+
+    
+
+    const userData = data;
+    login(userData); // asegúrate que login espera este formato
+    toast.success(`Bienvenid@, ${userData.usuario?.name || userData.usuario?.email}`);
+    navigate('/product');
+  } catch (error) {
+    console.error('Login error:', error.message);
+    toast.error(error.message || 'Correo o contraseña incorrectos');
+  }
+};  
 
   return (
     <>
