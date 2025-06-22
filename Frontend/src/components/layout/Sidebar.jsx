@@ -1,4 +1,4 @@
-import React , { useContext } from 'react'
+import React , { useContext } from 'react';
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { AiOutlineProduct } from "react-icons/ai";
 import { BsCartCheck } from "react-icons/bs";
@@ -8,6 +8,7 @@ import { PiSignOut } from "react-icons/pi";
 import { AiOutlineLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { MdOutlineManageAccounts } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 
 import Navbar from './Navbar.jsx';
@@ -19,8 +20,8 @@ const Sidebar = () => {
     const navigate = useNavigate();
     const isLoggedIn = !!localStorage.getItem('token') || !!user;
     const handleLogout = () => {
-        logout(); // Vacía el contexto y limpia el token
-        navigate('/login'); // Redirige al login
+        logout(); 
+        navigate('/login'); 
     };
     return (
         <>
