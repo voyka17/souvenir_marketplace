@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { FaUser, FaLock } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import loginImage from '../assets/images/main.jpg';
 import Footer from '../components/layout/Footer.jsx';
 import { UserContext } from '../context/userContext.jsx';
@@ -19,7 +20,7 @@ const LoginPage = () => {
   useEffect(() => {
     if (user) {
       toast.info(`Ya has iniciado sesión como ${user.name || user.email || 'usuario'}.`);
-      navigate('/product'); 
+      navigate('/product');
     }
   }, [user, navigate]);
 
@@ -28,22 +29,25 @@ const LoginPage = () => {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await fetch(URL_SERVER, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+    e.preventDefault();
+    try {
+      const response = await axios.post(URL_SERVER, {
         email: form.email,
         password: form.password,
-      }),
-    });
+      });
 
-    const data = await res.json(); // solo se puede usar una vez
-    console.log('Login:', data);
+      const data = response.data;
+      if (!data.ok) {
+        throw new Error(data.message || 'Credenciales inválidas');
+      }
 
-    if (!res.ok || !data.ok) {
-      throw new Error(data.message || 'Credenciales inválidas');
+      localStorage.setItem('token', data.token);
+      login(data); // Asumiendo que `data.usuario` es lo que necesitas
+      toast.success(`Bienvenid@, ${data.usuario?.name || data.usuario?.email}`);
+      navigate('/product');
+    } catch (error) {
+      console.error('Login error:', error.response?.data?.message || error.message);
+      toast.error(error.response?.data?.message || 'Correo o contraseña incorrectos');
     }
 
     localStorage.setItem('token', data.token);
@@ -65,7 +69,6 @@ const LoginPage = () => {
     <>
       <ToastContainer />
       <div className="min-h-screen flex">
-        {/* Lado izquierdo (30%) */}
         <div className="w-[30%] bg-[#f9e5bb] hidden md:flex items-center justify-center">
           <img
             src={loginImage}
@@ -73,7 +76,7 @@ const LoginPage = () => {
             className="object-cover h-full w-full"
           />
         </div>
-        {/* Lado derecho (70%) */}
+
         <div className="w-full md:w-[70%] flex items-center justify-center bg-[#f9e5bb] px-6 py-12">
           <form
             onSubmit={handleSubmit}
@@ -122,7 +125,7 @@ const LoginPage = () => {
 
             <div className="flex justify-center space-x-4 mt-6">
               <ButtonLogIn />
-              {user && (<ButtonLogOut />)}
+              {user && <ButtonLogOut />}
             </div>
 
             <div className="mt-6 text-center">
@@ -142,4 +145,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-

@@ -44,6 +44,14 @@ const RegisterPage = () => {
     }
   };
 
+  useEffect(() => {
+  const token = localStorage.getItem('token');
+  if (token) {
+      logout(); 
+      console.log("Sesión previa detectada. Token eliminado.");
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();    
     if (!validateEmail(form.email)) return; 
@@ -68,8 +76,7 @@ const RegisterPage = () => {
         const newUser = data.user;
         console.log(`Usuario registrado con el correo: ${newUser.email}`);
         toast.success(`Usuario registrado con el correo: ${newUser.email}`); 
-        login(newUser);
-        navigate('/product');
+        navigate('/login');
       } else {
         console.log('Error al registrar el usuario',data?.message);
         toast.error(`Error al registrar el usuario`);
