@@ -44,7 +44,7 @@ const Sell = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!product.image) {
-            alert("Por favor selecciona una imagen para el producto.");
+            alert("Please select an image for the product.");
             return;
         }
 
@@ -62,11 +62,11 @@ const Sell = () => {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            alert('Producto creado exitosamente');
+            alert('Successfully created product');
             window.location.reload();
         } catch (error) {
-            console.error('Error al subir producto', error);
-            alert('Error al crear producto');
+            console.error('Error uploading product', error);
+            alert('Error creating product');
         }
     };
 

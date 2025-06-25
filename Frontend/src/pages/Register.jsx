@@ -35,7 +35,7 @@ const RegisterPage = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    console.log("Imagen seleccionada:", file);
+    console.log("Selected image: ", file);
     setSelectedImage(file);
     if (file) {
       setPreviewImage(URL.createObjectURL(file));
@@ -63,20 +63,20 @@ const RegisterPage = () => {
         body: formData,
       });
       const data = await res.json().catch(() => null);
-      console.log('Creacion de usuario ', res.status, data);
+      console.log('User creation ', res.status, data);
       if (res.ok && data?.user) {
         const newUser = data.user;
         navigate('/login');
-        console.log(`Usuario registrado con el correo: ${newUser.email}`);
-        toast.success(`Usuario registrado con el correo: ${newUser.email}`);
+        console.log(`Registered user with email: ${newUser.email}`);
+        toast.success(`Registered user with email: ${newUser.email}`);
       } else {
-        console.log('Error al registrar el usuario', data?.message);
-        toast.error(`Error al registrar el usuario`);
+        console.log('Error registering user', data?.message);
+        toast.error(`Error registering user`);
       }
     } catch (error) {
       console.error(error);
-      console.log('Error al conectar con el servidor');
-      toast.error(`Error al conectar con el servidor`);
+      console.log('Error connecting to the server');
+      toast.error(`Error connecting to the server`);
     }
   };
 
@@ -109,7 +109,8 @@ const RegisterPage = () => {
             className="w-full max-w-md bg-sandybrown-400 p-8 rounded-lg shadow-lg" >
 
             <h1 className="text-l font-bold mb-4 text-center text-gray-800">
-              Crear cuenta
+
+              Create account
             </h1>
             {/* Preview redondeado */}
             <div className="flex justify-center mb-4">
@@ -138,14 +139,14 @@ const RegisterPage = () => {
             {/* Campo: Nombre */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium mb-1">
-                Nombre
+                Name
               </label>
               <div className="relative">
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Nombres"
+                  placeholder="Name"
                   value={form.name}
                   onChange={handleChange}
                   required
@@ -157,14 +158,14 @@ const RegisterPage = () => {
             {/* Campo: Apellidos */}
             <div className="mb-4">
               <label htmlFor="last_name" className="block text-sm font-medium mb-1">
-                Apellidos
+                last name
               </label>
               <div className="relative">
                 <input
                   type="text"
                   name="last_name"
                   id="last_name"
-                  placeholder="Apellidos"
+                  placeholder="Last name"
                   value={form.last_name}
                   onChange={handleChange}
                   required
@@ -177,14 +178,15 @@ const RegisterPage = () => {
             {/* Campo: Correo */}
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium mb-1">
-                Correo Electrónico
+
+                Email
               </label>
               <div className="relative">
                 <input
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Correo Electronico"
+                  placeholder="Email"
                   value={form.email}
                   onChange={handleChange}
                   required
@@ -200,14 +202,14 @@ const RegisterPage = () => {
                 htmlFor="password"
                 className="block text-sm font-medium mb-1"
               >
-                Contraseña
+                Password
               </label>
               <div className="relative">
                 <input
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Contraseña"
+                  placeholder="Password"
                   value={form.password}
                   onChange={handleChange}
                   required
@@ -223,7 +225,7 @@ const RegisterPage = () => {
                 htmlFor="country"
                 className="block text-sm font-medium mb-1"
               >
-                País
+                Country
               </label>
               <select
                 name="country"
@@ -233,7 +235,8 @@ const RegisterPage = () => {
                 required
                 className="w-full px-4 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:ring-blue-300"
               >
-                <option value="">Selecciona un país</option>
+                <option value="">
+                  Select a country</option>
                 {countries.map((country) => (
                   <option key={country.name} value={country.name}>
                     {country.name}
@@ -245,14 +248,14 @@ const RegisterPage = () => {
             {/* Campo: Teléfono */}
             <div className="mb-4">
               <label htmlFor="phone" className="block text-sm font-medium mb-1">
-                Teléfono
+                Phone
               </label>
               <div className="relative">
                 <input
                   type="text"
                   name="phone"
                   id="phone"
-                  placeholder="Telefono"
+                  placeholder="Phone"
                   value={form.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:ring-blue-300"
@@ -267,14 +270,15 @@ const RegisterPage = () => {
                 htmlFor="address"
                 className="block text-sm font-medium mb-1"
               >
-                Dirección
+
+                Address
               </label>
               <div className="relative">
                 <input
                   type="text"
                   name="address"
                   id="address"
-                  placeholder="Dirección"
+                  placeholder="Address"
                   value={form.address}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border bg-white rounded-md focus:outline-none focus:ring focus:ring-blue-300"
@@ -289,9 +293,10 @@ const RegisterPage = () => {
             </div>
             <div className="mt-6 text-center">
               <p>
-                ¿Ya tienes una cuenta?{' '}
+                ¿You already have an account?{' '}
                 <Link to="/login" className="text-blue-600 hover:underline">
-                  Iniciar sesión
+
+                  Login
                 </Link>
               </p>
             </div>

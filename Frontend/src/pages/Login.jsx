@@ -17,7 +17,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (user) {
-      toast.info(`Ya has iniciado sesión como ${user.name || user.email || 'usuario'}.`);
+      toast.info(`You are logged in as ${user.name || user.email || 'usuario'}.`);
       navigate('/product');
     }
   }, [user, navigate]);
@@ -54,7 +54,7 @@ const LoginPage = () => {
       navigate('/product');
     } catch (error) {
       console.error('Login error:', error.message);
-      toast.error(error.message || 'Correo o contraseña incorrectos');
+      toast.error(error.message || 'Incorrect email or password');
     }
   };
 
@@ -77,18 +77,19 @@ const LoginPage = () => {
             className="w-full max-w-md bg-sandybrown-200 p-8 rounded-lg shadow-lg"
           >
             <h1 className="text-xl font-bold mb-6 text-center text-gray-800">
-              Iniciar Sesión
+
+              Login
             </h1>
             <div className="mb-6">
               <label htmlFor="email" className="block text-sm font-medium mb-1">
-                Correo Electrónico
+                Email
               </label>
               <div className="relative">
                 <input
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Correo Electrónico"
+                  placeholder="Email"
                   value={form.email}
                   onChange={handleChange}
                   required
@@ -100,14 +101,14 @@ const LoginPage = () => {
 
             <div className="mb-6">
               <label htmlFor="password" className="block text-sm font-medium mb-1">
-                Contraseña
+                Password
               </label>
               <div className="relative">
                 <input
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Contraseña"
+                  placeholder="Password"
                   value={form.password}
                   onChange={handleChange}
                   required
@@ -124,9 +125,9 @@ const LoginPage = () => {
 
             <div className="mt-6 text-center">
               <p>
-                No tienes una cuenta?{' '}
+                You don't have an account?{' '}
                 <Link to="/register" className="text-blue-600 hover:underline">
-                  Crear cuenta
+                  Create account
                 </Link>
               </p>
             </div>
